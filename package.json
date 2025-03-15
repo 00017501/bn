@@ -1,0 +1,40 @@
+{
+  "name": "boundlessnarrative",
+  "version": "1.0.0",
+  "description": "WebTechCW2",
+  "main": "app.js",
+  "scripts": {
+    "dev": "NODE_ENV=dev nodemon app.js",
+    "start": "NODE_ENV=prod node app.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:00017501/bn.git"
+  },
+  "author": "00017501",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "commander": "^13.1.0",
+    "date-fns": "^4.1.0",
+    "date-fns-tz": "^3.2.0",
+    "dompurify": "^3.2.4",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.18.1",
+    "express-validator": "^7.2.1",
+    "jsdom": "^26.0.0",
+    "marked": "^15.0.7",
+    "nodemon": "^3.1.9"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "eslint": "^9.21.0",
+    "eslint-plugin-import": "^2.31.0",
+    "globals": "^16.0.0"
+  }
+}
