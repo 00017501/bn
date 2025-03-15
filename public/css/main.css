@@ -1,0 +1,86 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer {
+    margin-top: auto;
+}
+
+/* Base Typography */
+body {
+    font-size: 16px;
+}
+
+/* Story card typography (smaller proportions) */
+.story-card  .story-preview > h1 {
+    font-size: 1.125rem !important;
+}
+
+.story-card  .story-preview > h2 {
+    font-size: 1rem !important; /* Your original spec */
+}
+
+.story-card  .story-preview > h3 {
+    font-size: 0.9375rem !important;
+}
+
+.story-card  .story-preview > h4 {
+    font-size: 0.875rem !important; 
+}
+
+.story-card  .story-preview > h5 {
+    font-size: 0.8125rem !important;
+}
+
+.story-card  .story-preview > h6 {
+    font-size: 0.75rem !important;
+}
+
+.story-card  .story-preview > p {
+    font-size: 0.875rem !important;
+    line-height: 1.5 !important;
+}
+
+/* Story detail content typography (conservative larger proportions) */
+.story-detail-content {
+    font-size: 1rem !important;
+}
+
+.story-detail-content > h1 {
+    font-size: 1.375rem !important; /* Conservative large heading */
+}
+  
+.story-detail-content > h2 {
+    font-size: 1.25rem !important;
+}
+
+.story-detail-content > h3 {
+    font-size: 1.125rem !important;
+}
+
+.story-detail-content > h4 {
+    font-size: 1rem !important; /* Same as paragraph */
+}
+
+.story-detail-content > h5 {
+    font-size: 0.9375rem !important;
+}
+
+.story-detail-content > h6 {
+    font-size: 0.875rem !important;
+}
+
+.story-detail-content > p {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+}
+
+
+/* Minor responsive adjustments - keeping changes minimal */
+@media (min-width: 768px) {
+    .story-detail-content > h1 {
+        font-size: 1.5rem !important;
+    }
+}

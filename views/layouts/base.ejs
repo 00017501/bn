@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title><%= title %></title>
+    <link rel="icon" type="image/x-icon" href="/images/project-tab-icon.png">
+    <!-- CSS -->
+
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <!-- Bootstrap Icons -->
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css"/>
+
+    <!-- JS -->
+    <!-- Bootstrap JS -->
+    <script defer src="/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script defer src="/js/main.js"></script>
+
+    <!-- Additional head content -->
+    <%- defineContent('head') %>
+</head>
+<body>
+<header>
+    <!-- Common header content -->
+    <%- include('partials/navbar') %>
+</header>
+
+<main class="bg-secondary-subtle">
+    <%- defineContent('outsideContainerMain') %>
+    <div class="container mb-5 mt-3">
+        <!-- Included the message alert here as i tried to follow the same response structure all over the project -->
+        <% if (typeof generalMessage !== 'undefined' && generalMessage) { %>
+            <div class="col-lg-8 mx-auto">
+            <div class="alert alert-<%= generalMessage.type === 'error' ? 'danger' : 'success' %> alert-dismissible fade show mb-5" role="alert">
+                <%= generalMessage.message %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+        <% } %>
+        <!-- This is where page content will go -->
+        <%- body %>
+    </div>
+</main>
+
+    <!-- Common footer content -->
+    <%- include('partials/footer') %>
+
+    <%- defineContent('customScript') %>
+</body>
+</html>

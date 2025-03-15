@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-md bg-body-tertiary">
+  <div class="container">
+    <!-- Logo on the left -->
+    <a class="navbar-brand" href="/"  data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Go to the main page"><i class="bi bi-book me-2"></i>BN✨</a>
+    
+    <!-- Burger button for mobile that triggers offcanvas -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas" aria-controls="navbarOffcanvas" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <!-- Offcanvas container for mobile -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvas" aria-labelledby="navbarOffcanvasLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="navbarOffcanvasLabel">BN✨</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav ms-auto mb-2 mb-md-0 align-items-md-center">
+          <li class="nav-item">
+            <a class="nav-link" href="/stories">All Stories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/stories/create">Add Story</a>
+          </li>
+          
+          <!-- Authentication links -->
+          <% if (locals && locals.user && locals.user.username) { %>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <div data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="<%= locals.user.username %>" class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center me-2" style="width: 36px; height: 36px; font-size: 16px;">
+                  <%= locals.user.username.charAt(0).toUpperCase() %>
+                </div>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/auth/logout">Logout</a></li>
+              </ul>
+            </li>
+          <% } else { %>
+            <li class="nav-item">
+              <a class="nav-link" href="/auth/login">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-outline-primary ms-md-2" href="/auth/register">Register</a>
+            </li>
+          <% } %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
