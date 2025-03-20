@@ -1,0 +1,87 @@
+<%- contentFor('body') %>
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-header">
+                <h3>Login</h3>
+            </div>
+            <div class="card-body p-4">
+                <form action="/auth/login" method="POST" novalidate>
+                    <!-- Hidden input to store the fromUrl parameter -->
+                    <input type="hidden" name="fromUrl" value="<%= typeof additionalData !== 'undefined' && additionalData.fromUrl ? additionalData.fromUrl : '' %>">
+                    
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input
+                                type="text"
+                                class="form-control <%= typeof errors !== 'undefined' && errors && errors.find(e => e.path === 'username') ? 'is-invalid' : '' %>"
+                                id="username"
+                                name="username"
+                                placeholder="Enter your username"
+                                value="<%= typeof additionalData !== 'undefined' && additionalData.formData && additionalData.formData.username ? additionalData.formData.username : '' %>"
+                                required
+                        >
+                        <% if (typeof errors !== 'undefined' && errors && errors.find(e => e.path === 'username')) { %>
+                            <div class="invalid-feedback">
+                                <%= errors.find(e => e.path === 'username').msg %>
+                            </div>
+                        <% } %>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <div class="input-group">
+                            <input
+                                    type="password"
+                                    class="form-control <%= typeof errors !== 'undefined' && errors && errors.find(e => e.path === 'password') ? 'is-invalid' : '' %>"
+                                    id="password"
+                                    name="password"
+                                    placeholder="Enter your password"
+                                    required
+                            >
+                            <button class="btn btn-outline-primary" type="button" id="togglePassword">
+                                <i class="bi bi-eye" id="toggleIcon"></i>
+                            </button>
+                            <% if (typeof errors !== 'undefined' && errors && errors.find(e => e.path === 'password')) { %>
+                                <div class="invalid-feedback">
+                                    <%= errors.find(e => e.path === 'password').msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">Log In</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="signup-link mt-3 text-center">
+            Don't have an account? <a href="/auth/register<%= typeof additionalData !== 'undefined' && additionalData.fromUrl ? '?fromUrl=' + additionalData.fromUrl : '' %>">Sign up</a>
+        </div>
+    </div>
+</div>
+
+<%- contentFor('customScript') %>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Toggle password visibility (the eye icon that converts the password type input to text type)
+        const togglePassword = document.getElementById('togglePassword');
+        const password = document.getElementById('password');
+        const toggleIcon = document.getElementById('toggleIcon');
+        
+        togglePassword.addEventListener('click', function() {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            
+            // Toggle the eye icon
+            if (type === 'password') {
+                toggleIcon.classList.remove('bi-eye-slash');
+                toggleIcon.classList.add('bi-eye');
+            } else {
+                toggleIcon.classList.remove('bi-eye');
+                toggleIcon.classList.add('bi-eye-slash');
+            }
+        });
+    });
+</script>
