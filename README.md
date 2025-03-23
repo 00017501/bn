@@ -164,7 +164,6 @@ npm run dev
 </div>
 
 ## 📊 Project Structure
-
 ```
 boundlessnarrative/
 ├── 📁 public/            # Static assets
@@ -178,7 +177,9 @@ boundlessnarrative/
 ├── 📁 controllers/       # Request handlers
 ├── 📁 services/          # Business logic
 ├── 📁 middleware/        # Express middleware
-├── 📁 utils/             # Utility functions
+├── 📁 validators/        # Express validators
+├── 📁 routes/            # Application routes
+├── 📁 data/              # Folder with data collections
 ├── 📄 app.js             # Application entry point
 └── 📄 package.json       # Project configuration
 ```
