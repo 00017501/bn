@@ -10,7 +10,6 @@ const commentService = {
    */
   create(commentData) {
     const {authorId, storyId, content} = commentData;
-    console.log(`DATA: ${authorId}, ${storyId}, ${content}`);
 
     // Validate comment data
     if (!authorId || !storyId || !content) {

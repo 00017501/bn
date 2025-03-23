@@ -93,8 +93,6 @@ const storyService = {
     let finalStory = this._attachEngagementMetrics([story], viewerId)[0];
     finalStory.comments = storyComments;
 
-    console.log(finalStory);
-
     return finalStory;
   },
 

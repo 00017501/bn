@@ -2,7 +2,6 @@ const checkLoggedIn = (req, res, next) => {
   if (req.session && req.session.user) {
     next();
   } else {
-    console.log('User not logged in');
     // Store the current URL to redirect back after login
     const returnUrl = encodeURIComponent(req.originalUrl);
     res.redirect(`/auth/login?fromUrl=${returnUrl}`);
