@@ -1,0 +1,161 @@
+<%- contentFor('body') %>
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-header">
+                <h3>Register</h3>
+            </div>
+            <div class="card-body p-4">
+                <form action="/auth/register" method="POST" novalidate>
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input
+                                type="text"
+                                class="form-control <%= typeof errors !== 'undefined' && errors && errors.find(e => e.path === 'username') ? 'is-invalid' : '' %>"
+                                id="username"
+                                name="username"
+                                placeholder="Choose a username"
+                                value="<%= typeof additionalData !== 'undefined' && additionalData && additionalData.formData && additionalData.formData.username ? additionalData.formData.username : '' %>"
+                                required
+                        >
+                        <% if (typeof errors !== 'undefined' && errors && errors.find(e => e.path === 'username')) { %>
+                            <div class="invalid-feedback">
+                                <%= errors.find(e => e.path === 'username').msg %>
+                            </div>
+                        <% } %>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input
+                                type="email"
+                                class="form-control <%= typeof errors !== 'undefined' && errors && errors.find(e => e.path === 'email') ? 'is-invalid' : '' %>"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your email"
+                                value="<%= typeof additionalData !== 'undefined' && additionalData && additionalData.formData && additionalData.formData.email ? additionalData.formData.email : '' %>"
+                                required
+                        >
+                        <% if (typeof errors !== 'undefined' && errors && errors.find(e => e.path === 'email')) { %>
+                            <div class="invalid-feedback">
+                                <%= errors.find(e => e.path === 'email').msg %>
+                            </div>
+                        <% } %>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="fullName" class="form-label">Full Name (Optional)</label>
+                        <input
+                                type="text"
+                                class="form-control <%= typeof errors !== 'undefined' && errors && errors.find(e => e.path === 'fullName') ? 'is-invalid' : '' %>"
+                                id="fullName"
+                                name="fullName"
+                                placeholder="Enter your full name"
+                                value="<%= typeof additionalData !== 'undefined' && additionalData && additionalData.formData && additionalData.formData.fullName ? additionalData.formData.fullName : '' %>"
+                        >
+                        <% if (typeof errors !== 'undefined' && errors && errors.find(e => e.path === 'fullName')) { %>
+                            <div class="invalid-feedback">
+                                <%= errors.find(e => e.path === 'fullName').msg %>
+                            </div>
+                        <% } %>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <div class="input-group">
+                            <input
+                                    type="password"
+                                    class="form-control <%= typeof errors !== 'undefined' && errors && errors.find(e => e.path === 'password') ? 'is-invalid' : '' %>"
+                                    id="password"
+                                    name="password"
+                                    placeholder="Create a password"
+                                    required
+                            >
+                            <button class="btn btn-outline-primary" type="button" id="togglePassword">
+                                <i class="bi bi-eye" id="toggleIcon"></i>
+                            </button>
+                            <% if (typeof errors !== 'undefined' && errors && errors.find(e => e.path === 'password')) { %>
+                                <div class="invalid-feedback">
+                                    <%= errors.find(e => e.path === 'password').msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                        <div class="input-group">
+                            <input
+                                    type="password"
+                                    class="form-control <%= typeof errors !== 'undefined' && errors && errors.find(e => e.path === 'confirmPassword') ? 'is-invalid' : '' %>"
+                                    id="confirmPassword"
+                                    name="confirmPassword"
+                                    placeholder="Confirm your password"
+                                    required
+                            >
+                            <button class="btn btn-outline-primary" type="button" id="toggleConfirmPassword">
+                                <i class="bi bi-eye" id="toggleConfirmIcon"></i>
+                            </button>
+                            <% if (typeof errors !== 'undefined' && errors && errors.find(e => e.path === 'confirmPassword')) { %>
+                                <div class="invalid-feedback">
+                                    <%= errors.find(e => e.path === 'confirmPassword').msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">Create Account</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="login-link mt-3 text-center">
+            Already have an account? <a href="/auth/login">Log in</a>
+        </div>
+    </div>
+</div>
+
+<%- contentFor('customScript') %>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Toggle for main password
+        const togglePassword = document.getElementById('togglePassword');
+        const password = document.getElementById('password');
+        const toggleIcon = document.getElementById('toggleIcon');
+        
+        togglePassword.addEventListener('click', function() {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            
+            // Toggle the eye icon
+            if (type === 'password') {
+                toggleIcon.classList.remove('bi-eye-slash');
+                toggleIcon.classList.add('bi-eye');
+            } else {
+                toggleIcon.classList.remove('bi-eye');
+                toggleIcon.classList.add('bi-eye-slash');
+            }
+        });
+        
+        // Toggle for confirm password
+        const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
+        const confirmPassword = document.getElementById('confirmPassword');
+        const toggleConfirmIcon = document.getElementById('toggleConfirmIcon');
+        
+        toggleConfirmPassword.addEventListener('click', function() {
+            const type = confirmPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+            confirmPassword.setAttribute('type', type);
+            
+            // Toggle the eye icon
+            if (type === 'password') {
+                toggleConfirmIcon.classList.remove('bi-eye-slash');
+                toggleConfirmIcon.classList.add('bi-eye');
+            } else {
+                toggleConfirmIcon.classList.remove('bi-eye');
+                toggleConfirmIcon.classList.add('bi-eye-slash');
+            }
+        });
+    });
+</script>

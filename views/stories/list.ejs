@@ -1,0 +1,131 @@
+<%- contentFor('head') %>
+<%- contentFor('body') %>
+<div class="container mt-4">
+  <div class="row mb-4">
+    <div class="col-md-8">
+      <!-- Breadcrumb -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">All Stories</li>
+        </ol>
+      </nav>
+
+      <h1 class="mb-0">Stories</h1>
+      <p class="text-muted">Discover boundless stories from unique narrators (storytellers 🙃) </p>
+    </div>
+    <div class="col-md-4">
+      <form action="/stories" method="GET" class="d-flex">
+        <input 
+          type="text" 
+          class="form-control me-2" 
+          placeholder="Search stories (by title, content)..." 
+          name="query"
+          value="<%= typeof searchQuery !== 'undefined' ? searchQuery : '' %>"
+        >
+        <button type="submit" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Search Stories">
+          <i class="bi bi-search"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Story Grid -->
+  <div class="row" id="storiesContainer">
+    <% if (stories && stories.length > 0) { %>
+      <% stories.forEach(story => { %>
+        <!-- Only stories that are not draft or ones that are draft but belong to the viewer -->
+        <% if (!story.is_draft || (story.is_draft && story.is_my_story )) { %>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card h-100 story-card">
+            <div class="card-body">
+              <h5 class="card-title" >
+                <a data-bs-placement="top" data-bs-title="Read the story" data-bs-toggle="tooltip"  href="/stories/<%= story.id %>" class="text-decoration-none text-reset"><%= story.title %></a>
+              </h5>
+              
+              <p class="card-text text-muted mb-2 small">
+                <% if (story.is_my_story || false) { %>
+                  <span class="text-success fw-bolder">You</span> •
+                <% } else if (!story.is_anonymous && story.author) { %>
+                    <%= story.author.username || 'Anonymous' %> • 
+                <% } else { %>
+                  Anonymous • 
+                <% } %>
+                <%= new Date(story.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) %>
+
+                <% if (story.is_draft) {%>
+                  <span  data-bs-placement="right" data-bs-title="ONLY visible to YOU" data-bs-toggle="tooltip" class="badge bg-warning text-dark ms-2">Draft</span>
+                <% } %>
+              </p>
+              
+              <div class="story-preview">
+                <!-- Show first 150 characters of content as preview -->
+                <%- story.sanitizedContent.substring(0, 150) %><%= story.content.length > 150 ? '...' : '' %>
+
+              </div>
+              <!-- Tags -->
+              <% if (story.tags && story.tags.length > 0) { %>
+                <div class="mb-2">
+                  <% story.tags.slice(0, 3).forEach(tag => { %>
+                    <a data-bs-placement="top" data-bs-title="<%= 'Filter by \'' + tag +'\' tag'  %>" data-bs-toggle="tooltip" href="/stories/?tags=<%= tag %>" class="badge bg-success-subtle text-dark text-decoration-none me-1 mb-1">
+                      <%= tag %>
+                    </a>
+                  <% }); %>
+                  <% if (story.tags.length > 3) { %>
+                    <span class="badge bg-light text-dark">+<%= story.tags.length - 3 %></span>
+                  <% } %>
+                </div>
+              <% } %>
+            </div>
+            
+            <div class="card-footer bg-transparent">
+              <div class="d-flex justify-content-between align-items-center">
+                <!-- Story related stats as likes, views, comments counts -->
+                <div>
+                  <span class="text-muted small"><i class="bi bi-eye me-1"></i><%= story.views_count || 0 %></span>
+                  <span class="text-muted small ms-2"><i class="bi bi-heart me-1"></i><%= story.likes_count || 0 %></span>
+                  <span class="text-muted small ms-2"><i class="bi bi-chat-left-text me-1"></i><%=story.comments_count || 0%></span>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                  <% if (story.is_my_story) { %>
+                    <div class="d-flex align-items-center gap-2">
+                      <a href="/stories/<%= story.id %>/edit" data-bs-toggle="tooltip" 
+                        data-bs-placement="bottom" data-bs-title="Edit story" class="btn btn-sm btn-outline-warning">
+                        <i class="bi bi-pencil-square"></i> Edit
+                      </a>
+                    </div>
+                  <% } %>
+                <a href="/stories/<%= story.id %>" class="btn btn-sm btn-outline-primary">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% } %>
+      <% }); %>
+    <% } else { %>
+      <div class="col-12 text-center py-5">
+        <div class="py-5">
+          <i class="bi bi-journal-bookmark display-1 text-muted"></i>
+          <h3 class="mt-3">No stories found</h3>
+          <p class="text-muted">Try adjusting your search or filters</p>
+          <a href="/stories/create" class="btn btn-primary mt-2">Write Your Own Story</a>
+        </div>
+      </div>
+    <% } %>
+  </div>
+
+  <% if (locals.user) { %>
+    <div class="row mt-4">
+      <div class="col-12">
+        <div class="card bg-light">
+          <div class="card-body text-center py-4">
+            <h4>Have a story to share?</h4>
+            <p class="mb-3">Your voice matters. Share your unique perspective with our community.</p>
+            <a href="/stories/create" class="btn btn-primary">Create New Story</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% } %>
+</div>
