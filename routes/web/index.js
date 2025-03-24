@@ -13,6 +13,8 @@ router.get('/', (req, res) => {
 
 // Health check route (i saw this to be used when performing periodically quikc check of the status of the server) 
 // (References: https://microservices.io/patterns/observability/health-check-api.html)
+
+// I utilized this route to check the health of the server in my aws load balancer and ec2 target groups
 router.get('/healthcheck', (req, res) => {
   res.json({
     status: 'ok',
