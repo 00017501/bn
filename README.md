@@ -29,7 +29,7 @@ Here, you can share your stories, tell your tales, and explore the boundless wor
 
 ## 🔗 References
 
-- 🌐 Link to the deployed page: [boundlessnarrative.com](http://3.89.104.190/)
+- 🌐 Link to the deployed page: [server public domain](http://3.89.104.190/) or [load balancer https url](https://boundless-narrative-lb-2051809694.us-east-1.elb.amazonaws.com/)
 - 📂 Link to the GitHub repository: [github.com/00017501/bn](https://github.com/00017501/bn)
 
 ## 🚀 How to Run the Project
