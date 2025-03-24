@@ -29,9 +29,9 @@
             "organizational behavior",
             "retail industry analysis"
         ],
-        "views_count": 3,
+        "views_count": 5,
         "created_at": "2025-03-23T17:14:49.695Z",
-        "updated_at": "2025-03-23T17:20:35.660Z"
+        "updated_at": "2025-03-24T12:56:52.030Z"
     },
     {
         "id": "b7fbdb8e-fd60-4608-90ae-1ee8613df3d4",
@@ -45,9 +45,9 @@
             "university issues",
             "r programming language"
         ],
-        "views_count": 12,
+        "views_count": 64,
         "created_at": "2025-03-23T17:17:56.663Z",
-        "updated_at": "2025-03-23T18:28:33.611Z"
+        "updated_at": "2025-03-24T12:56:57.827Z"
     },
     {
         "id": "1d358d3c-3182-4d26-8778-5f73b6e9279f",
@@ -65,5 +65,17 @@
         "views_count": 14,
         "created_at": "2025-03-23T17:24:14.978Z",
         "updated_at": "2025-03-23T18:28:01.317Z"
+    },
+    {
+        "id": "c8677322-8338-41d5-9ce5-3292ef1b77d5",
+        "author_id": "be2a216c-2f99-48d3-a506-741fb6168def",
+        "title": "Simple Python example",
+        "content": "```python\r\ndef my_method(a: int, b: str, *args, **kwargs):\r\n    comma_sep_args = ', '.join(args)\r\n    return f\"{a} {b} {comma_sep_args}\"\r\n```",
+        "is_anonymous": false,
+        "is_draft": false,
+        "tags": [],
+        "views_count": 1,
+        "created_at": "2025-03-24T12:59:02.817Z",
+        "updated_at": "2025-03-24T12:59:02.831Z"
     }
 ]

@@ -78,6 +78,7 @@ body {
 }
 
 
+
 /* Minor responsive adjustments - keeping changes minimal */
 @media (min-width: 768px) {
     .story-detail-content > h1 {
