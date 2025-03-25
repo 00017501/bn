@@ -59,8 +59,9 @@
               </p>
               
               <div class="story-preview">
+                <div class="fading-overlay"></div>
                 <!-- Show first 150 characters of content as preview -->
-                <%- story.sanitizedContent.substring(0, 150) %><%= story.content.length > 150 ? '...' : '' %>
+                <%- story.sanitizedContent %> ...
 
               </div>
               <!-- Tags -->

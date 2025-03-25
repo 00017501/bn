@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const crypto = require('crypto');
-
+const config = require('../config');
 /**
  * Enum for data source types.
  * Each value represents a different collection of data stored in separate JSON files.
@@ -35,7 +35,13 @@ const _validateSource = (source) => {
  * @returns {string} The full path to the corresponding JSON file.
  */
 const _buildSourcePath = (source) => {
-  return path.join(__dirname, `${source}.json`);
+  if (config.server.env === 'production') {
+    console.log('Accessing production data');
+    return path.join(__dirname, 'prod', `${source}.json`);  
+  } else {
+    console.log('Accessing development data');
+    return path.join(__dirname, 'dev', `${source}.json`);
+  }
 };
 
 

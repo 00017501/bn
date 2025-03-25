@@ -1,0 +1,32 @@
+[
+    {
+        "id": "be2a216c-2f99-48d3-a506-741fb6168def",
+        "username": "admin1",
+        "email": "admin@test.com",
+        "fullName": "Admin Adminovic",
+        "password_hash": "$2b$10$BUfDaHexmeZNwI0vBlNvb.oVV6Lgrj1vAGBAe0XFOYY/Y38ep4fE.",
+        "is_active": true,
+        "created_at": "2025-03-23T17:07:09.935Z",
+        "updated_at": "2025-03-23T17:07:09.935Z"
+    },
+    {
+        "id": "ddefedff-6e8c-4b95-9fbe-c2fef37cac9a",
+        "username": "admin2",
+        "email": "admin2@test.com",
+        "fullName": "",
+        "password_hash": "$2b$10$Zo4QXpNCS/02hhnDcA0bf.eGsYhCWxyob1sGhGWGOsgKuVNnMOzjy",
+        "is_active": true,
+        "created_at": "2025-03-23T17:09:59.155Z",
+        "updated_at": "2025-03-23T17:09:59.155Z"
+    },
+    {
+        "id": "83735b55-ae2f-47aa-9c38-1b60efa1471a",
+        "username": "admin3",
+        "email": "admin3@test.com",
+        "fullName": "Admin Adminovic3",
+        "password_hash": "$2b$10$szvfnXKomIAUgaWATnAXGuxHTwMSui4YRNNy5Xa/Zm.NmctLmCi8G",
+        "is_active": true,
+        "created_at": "2025-03-23T17:12:16.515Z",
+        "updated_at": "2025-03-23T17:12:16.516Z"
+    }
+]
