@@ -6,12 +6,12 @@
 
 ## 🌌 Welcome to the Infinite Story Space
 
-In a digital realm where every voice deserves to be heard, Boundless Narrative emerges as a sanctuary for storytellers, dreamers, and truth-seekers. Here, stories transcend identity, and narratives know no bounds.
+Here, stories transcend identity, and narratives know no bounds.
 
 <details>
 <summary>✨ Click to learn more about our vision</summary>
 <br>
-We believe that storytelling is the most powerful form of human expression. Through stories, we connect, we heal, we understand, and we grow. Boundless Narrative was created to provide a space where anyone can share their voice without fear or limitation.
+We believe that storytelling is the most powerful form of human expression. Boundless Narrative was created to provide a space where anyone can share their voice without fear or limitation.
 </details>
 
 ## 💫 What is Boundless Narrative?
@@ -21,38 +21,21 @@ Here, you can share your stories, tell your tales, and explore the boundless wor
 <!-- PROJECT FEATURES TABLE -->
 | Feature | Description | Icon |
 |---------|-------------|------|
-| Story Creation | Share your own narrative with the world | 📝 |
-| Anonymous Posting | Stay hidden while your story shines | 🌙 |
+| Story Creation | Share your own stories with the world | 📝 |
+| Anonymous Posting | Stay hidden while people read yout story  | 🌙 |
 | Interaction | Like, bookmark, and comment on stories | ❤️ |
 | Discover | Find stories that resonate with you | 🔍 |
-| User Profiles | Create your author persona | 👤 |
 
 ## 🔗 References
 
-- 🌐 Link to the deployed page: 
-- [server public domain](http://3.89.104.190/) 
-- [load balancer https url](https://boundless-narrative-lb-2051809694.us-east-1.elb.amazonaws.com/) 
+- 🌐 Links to the deployed page: 
 - [boundlessnarrative.com](https://boundlessnarrative.com)
 - [www.boundlessnarrative.com](https://www.boundlessnarrative.com)
+- [Public Domain of EC2 Instance](http://3.89.104.190/) 
+- [AWS Load Balancer URL](https://boundless-narrative-lb-2051809694.us-east-1.elb.amazonaws.com/) 
 - 📂 Link to the GitHub repository: [github.com/00017501/bn](https://github.com/00017501/bn)
 
 ## 🚀 How to Run the Project
-
-<div align="center">
-
-```mermaid
-graph TD
-    A[Get Started] --> B[Clone Repository]
-    B --> C[Install Dependencies]
-    C --> D[Configure Environment]
-    D --> E[Run Development Server]
-    E --> F[Access Application]
-    
-    style A fill:#FFD700,stroke:#FFD700,color:black
-    style F fill:#4CAF50,stroke:#4CAF50,color:white
-```
-
-</div>
 
 ### 1️⃣ Clone the repository
 ```shell
@@ -93,9 +76,9 @@ npm run dev
 <summary><b>🏗️ Core Framework & Server</b></summary>
 <br>
 
-- [express](https://expressjs.com/) - 🚂 Fast and minimalist web framework for Node.js
-- [express-session](https://www.npmjs.com/package/express-session) - 🔑 Session middleware for managing user state
-- [express-validator](https://express-validator.github.io/docs/) - ✅ Validate and sanitize user input
+- [express](https://expressjs.com/) - 🚂 Web framework for Node.js that the project used
+- [express-session](https://www.npmjs.com/package/express-session) - 🔑 Implement the session/cookie based authentication
+- [express-validator](https://express-validator.github.io/docs/) - ✅ Validate and sanitize user input in the server side
 
 </details>
 
@@ -111,7 +94,8 @@ npm run dev
 <summary><b>📝 Content Processing</b></summary>
 <br>
 
-- [marked](https://www.npmjs.com/package/marked) - ✍️ Markdown parser and compiler for rich content
+- [marked](https://www.npmjs.com/package/marked) - ✍️ Parses the markdown to HTML
+- [DOMPurify](https://www.npmjs.com/package/dompurify) - 𝌞 Cleans the html and helps to render the html elements
 
 </details>
 
@@ -120,7 +104,7 @@ npm run dev
 <br>
 
 - [ejs](https://www.npmjs.com/package/ejs) - 🖌️ Embedded JavaScript templates for dynamic HTML
-- [express-ejs-layouts](https://github.com/expressjs/express-ejs-layouts) - 📐 Layout support for EJS in Express
+- [express-ejs-layouts](https://github.com/expressjs/express-ejs-layouts) - 📐 Layouts support for EJS in Express
 
 </details>
 
@@ -128,12 +112,12 @@ npm run dev
 <summary><b>🛠️ Development Tools</b></summary>
 <br>
 
-- [nodemon](https://www.npmjs.com/package/nodemon) - 🔄 Auto-restart server during development
+- [nodemon](https://www.npmjs.com/package/nodemon) - 🔄 Server runner that can auto-restart in case of changes during development
 
 </details>
 
 <details>
-<summary><b>🧹 Code Quality (Dev Dependencies)</b></summary>
+<summary><b>🧹 Code Quality</b></summary>
 <br>
 
 - [eslint](https://www.npmjs.com/package/eslint) - 🔍 Code linting for clean, consistent JavaScript
@@ -145,9 +129,9 @@ npm run dev
 <div align="center">
   <table>
     <tr>
-      <td align="center"><h3>📝</h3>Create</td>
-      <td align="center"><h3>🔍</h3>Discover</td>
-      <td align="center"><h3>❤️</h3>Like</td>
+      <td align="center"><h3>📝</h3>[Create](#anonymous-posting)</td>
+      <td align="center"><h3>🔍</h3>[Discover](#discovering-new-stories)</td>
+      <td align="center"><h3>❤️</h3>[Like](#story-actions)</td>
     </tr>
     <tr>
       <td align="center">Share your unique stories</td>
@@ -155,14 +139,14 @@ npm run dev
       <td align="center">Show appreciation</td>
     </tr>
     <tr>
-      <td align="center"><h3>🔖</h3>Bookmark</td>
-      <td align="center"><h3>💬</h3>Comment</td>
-      <td align="center"><h3>🌙</h3>Anonymous</td>
+      <td align="center"><h3>🔖</h3>[Bookmark](#story-actions)</td>
+      <td align="center"><h3>💬</h3>[Comment](#story-actions)</td>
+      <td align="center"><h3>😶‍🌫️</h3>[Anonymous](#anonymous-posting)</td>
     </tr>
     <tr>
       <td align="center">Save for later reading</td>
       <td align="center">Engage in discussion</td>
-      <td align="center">Post without revealing identity</td>
+      <td align="center">Post without revealing your identity</td>
     </tr>
   </table>
 </div>
@@ -179,21 +163,38 @@ boundlessnarrative/
 │   ├── 📁 partials/      # Reusable components
 │   └── 📁 pages/         # Page templates
 ├── 📁 controllers/       # Request handlers
-├── 📁 services/          # Business logic
+├── 📁 services/          # Business logic entities
 ├── 📁 middleware/        # Express middleware
-├── 📁 validators/        # Express validators
-├── 📁 routes/            # Application routes
+├── 📁 validators/        # Express server-side validators
+├── 📁 routes/            # Application routes (endpoints)
 ├── 📁 data/              # Folder with data collections
-├── 📄 app.js             # Application entry point
+├── 📄 app.js             # Main entry point
 └── 📄 package.json       # Project configuration
 ```
 
-## 💖 Happy storytelling!
+## Features illustrated
 
-<div align="center">
+###  Anonymous posting
+You can make your stories anonymoys
+![Anonymous posting flag](.github/features/anonymous-posts.png)
 
-***May your narratives know no bounds!*** 🚀✨
+### Discovering new stories
+You can search and filter to find stories you are interesting in
 
-[![Made with ❤️](https://img.shields.io/badge/Made%20with-%E2%9D%A4%EF%B8%8F-red.svg)](https://github.com/00017501/bn)
+![Search panel of list view](.github/features/post-search.png)
 
-</div>
+You can filter stories by tags to find stories with similar tags
+
+<img src=".github/features/post-filter-by-tag.png" alt="Filter stories by tag" width="50%"/>
+
+### Story actions
+
+You can like and bookmark stories. And if you are an author of the story, you can also edit and delete them
+
+<img src=".github/features/post-actions.png" alt="Filter stories by tag" width="100%"/>
+
+### Commenting stories
+
+You can leave comments under stories
+
+<img src=".github/features/post-comments.png" alt="Filter stories by tag" width="100%"/>
