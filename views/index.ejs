@@ -1,15 +1,90 @@
-<%- contentFor('outsideContainerMain') %>
-<div class="position-relative">
-    <img class="w-100 object-fit-contain" src="/images/main_page_banner.jpg" alt="">
-    <div class="position-absolute top-0 start-0 w-100 h-100 bg-white bg-opacity-50"></div>
-    <div style="top: 30%;" class="position-absolute start-50 translate-middle text-center">
-        <h1 class="text-white bg-dark p-2 fw-bold">Welcome to <span class="text-warning">B</span>oundless <span class="text-warning">N</span>arrative!</h1>
-        <p class="text-white bg-opacity-50 bg-dark p-2 lead">This web application was created to fulfill <span class=" text-decoration-underline fw-bold text-warning">Web Technology</span> module’s requirements and does not represent an actual company or service</p>
-        <% if (locals.user) {%>
+<%- contentFor('head') %>
+<style>
+    main {
+        background-image: url('https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=3518&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') !important;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .welcome-container {
+        width: 90%;
+        max-width: 700px;
+        margin-inline: auto;
+        padding: 2rem;
+        backdrop-filter: blur(5px);
+        background-color: rgba(0, 0, 0, 0.4);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+    
+    .site-title {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .highlighted-letter {
+        color: #ffc107;
+        font-size: 110%;
+        text-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+    }
+    
+    .site-description {
+        margin-bottom: 2rem;
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+    
+    .highlight-text {
+        color: #ffc107;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+    
+    .action-buttons .btn {
+        margin: 0.5rem;
+        padding: 0.6rem 1.5rem;
+        font-weight: 600;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+    }
+    
+    .action-buttons .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    @media (max-width: 768px) {
+        .site-title {
+            font-size: 2rem;
+        }
+        
+        .site-description {
+            font-size: 1rem;
+        }
+    }
+</style>
+
+<%- contentFor('body') %>
+<div class="welcome-container text-center">
+    <h1 class="text-white site-title">
+        Welcome to <span class="highlighted-letter">B</span>oundless <span class="highlighted-letter">N</span>arrative!
+    </h1>
+    
+    <p class="text-white site-description">
+        This web application was created to fulfill <span class="highlight-text">Web Technology</span> module's requirements and does not represent an actual company or service
+    </p>
+    
+    <div class="action-buttons">
+        <% if (locals.user) { %>
             <a class="btn btn-success" href="/stories/create">Create a story</a>
             <a class="btn btn-primary" href="/stories">View all stories</a>
         <% } else { %>
             <a class="btn btn-success" href="/auth/login">Login</a>
-            <% } %>
+        <% } %>
     </div>
 </div>
