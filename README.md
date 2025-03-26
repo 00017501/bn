@@ -172,29 +172,29 @@ boundlessnarrative/
 └── 📄 package.json       # Project configuration
 ```
 
-## Features illustrated
+## ✨ Features Illustrated
 
-###  Anonymous posting
-You can make your stories anonymoys
+#### 🔒 Anonymous Posting
+Share your stories without revealing your identity
 ![Anonymous posting flag](.github/features/anonymous-posts.png)
 
-### Discovering new stories
-You can search and filter to find stories you are interesting in
+#### 🔍 Discovering New Stories
+Search and filter to find stories that interest you
 
 ![Search panel of list view](.github/features/post-search.png)
 
-You can filter stories by tags to find stories with similar tags
+Filter stories by tags to find similar content
 
 <img src=".github/features/post-filter-by-tag.png" alt="Filter stories by tag" width="50%"/>
 
-### Story actions
+#### ⚡ Story Actions
 
-You can like and bookmark stories. And if you are an author of the story, you can also edit and delete them
+Like and bookmark stories. Authors can also edit and delete their content
 
-<img src=".github/features/post-actions.png" alt="Filter stories by tag" width="100%"/>
+<img src=".github/features/post-actions.png" alt="Story actions" width="100%"/>
 
-### Commenting stories
+#### 💬 Commenting on Stories
 
-You can leave comments under stories
+Engage with authors by leaving comments
 
-<img src=".github/features/post-comments.png" alt="Filter stories by tag" width="100%"/>
+<img src=".github/features/post-comments.png" alt="Comment section" width="100%"/>
