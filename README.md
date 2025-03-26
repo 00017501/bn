@@ -129,9 +129,9 @@ npm run dev
 <div align="center">
   <table>
     <tr>
-      <td align="center"><h3>📝</h3>[Create](#anonymous-posting)</td>
-      <td align="center"><h3>🔍</h3>[Discover](#discovering-new-stories)</td>
-      <td align="center"><h3>❤️</h3>[Like](#story-actions)</td>
+      <td align="center"><h3>📝</h3>Create</td>
+      <td align="center"><h3>🔍</h3>Discover</td>
+      <td align="center"><h3>❤️</h3>Like</td>
     </tr>
     <tr>
       <td align="center">Share your unique stories</td>
@@ -139,9 +139,9 @@ npm run dev
       <td align="center">Show appreciation</td>
     </tr>
     <tr>
-      <td align="center"><h3>🔖</h3>[Bookmark](#story-actions)</td>
-      <td align="center"><h3>💬</h3>[Comment](#story-actions)</td>
-      <td align="center"><h3>😶‍🌫️</h3>[Anonymous](#anonymous-posting)</td>
+      <td align="center"><h3>🔖</h3>Bookmark</td>
+      <td align="center"><h3>💬</h3>Comment</td>
+      <td align="center"><h3>😶‍🌫️</h3>Anonymous</td>
     </tr>
     <tr>
       <td align="center">Save for later reading</td>
