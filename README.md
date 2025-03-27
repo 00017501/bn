@@ -35,6 +35,12 @@ Here, you can share your stories, tell your tales, and explore the boundless wor
 - [AWS Load Balancer URL](https://boundless-narrative-lb-2051809694.us-east-1.elb.amazonaws.com/) 
 - 📂 Link to the GitHub repository: [github.com/00017501/bn](https://github.com/00017501/bn)
 
+## 🎫 Demo Account
+You can login to the system with demo account
+
+> **Username**: `admin1`
+> **Password**: `admin1`
+
 ## 🚀 How to Run the Project
 
 ### 1️⃣ Clone the repository
@@ -63,6 +69,8 @@ npm install
 ```shell
 npm run dev
 ```
+### 6️⃣ Access the project
+Go to http://locahost:3000 to access the project
 
 <div align="center">
   <img src="https://img.shields.io/badge/node-%3E%3D%2016.0.0-brightgreen" alt="Node.js Version">
