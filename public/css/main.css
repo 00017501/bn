@@ -92,6 +92,26 @@ body {
     line-height: 1.5 !important;
 }
 
+code {
+    border: 2px dashed #3b6fc9;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+code:hover {
+    border-color: #f84343;
+}
+
+button.copy-button {
+    opacity: 0;
+    transition: opacity 250ms ease;
+}
+
+pre:hover + button.copy-button,
+button.copy-button:hover {
+    opacity: 1;
+}
+
 
 
 /* Minor responsive adjustments - keeping changes minimal */
