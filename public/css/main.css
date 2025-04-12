@@ -92,13 +92,13 @@ body {
     line-height: 1.5 !important;
 }
 
-code {
+pre code.hljs {
     border: 2px dashed #3b6fc9;
     border-radius: 10px;
     transition: all 0.3s ease;
 }
 
-code:hover {
+pre code.hljs:hover {
     border-color: #f84343;
 }
 
